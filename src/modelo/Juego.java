@@ -8,7 +8,7 @@ public class Juego {
         //Variable para la jugada del humano 
     private String jugada; 
         //Array para las opciones de la maquina
-    private static final String[] OPCIONES = {"Piedra","Papel","Tijeras"};
+    private static final String[] OPCIONES = {"piedra","papel","tijeras"};
         //Variable random para elegir una opcion aleatoria por la maquina
     private Random random;
 //--------------------------------------------------------------------------------
