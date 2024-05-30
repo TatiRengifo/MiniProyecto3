@@ -24,6 +24,7 @@ public class App {
 //--------------------------------------------------------------------------------
 //Eleccion del juego
 
+
         VistaInterfazGUI vista = new VistaInterfazGUI();
         //VistaInterfazTerminal vista = new VistaInterfazTerminal();
         ControladorJuego controlador = new ControladorJuego(listaJuegos, vista);
