@@ -33,7 +33,7 @@ public class Juego {
     }
 //--------------------------------------------------------------------------------
     //Funcion para encontrar la opcion de la maquina
-    public String getOpciones() {
+    public String getOpcionAleatoria() {
         return OPCIONES[random.nextInt(OPCIONES.length)];
     }
     
