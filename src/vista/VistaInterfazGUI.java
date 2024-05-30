@@ -61,7 +61,8 @@ public class VistaInterfazGUI extends JFrame implements VistaInterfaz {
     @Override
     public String getJugada() {
         String jugada = campoJugada.getText(); //La jugada se saca del campo de texto
-        return jugada; //Se retorna la jugada
+        String LowerCaseInput = jugada.toLowerCase(); //Se transforma la letra a minuscula
+        return LowerCaseInput; //Se retorna la jugada
     }
 //-------------------------------------------------------------------------------- 
 }
