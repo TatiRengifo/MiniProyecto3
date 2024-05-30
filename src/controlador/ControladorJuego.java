@@ -31,9 +31,28 @@ public class ControladorJuego implements ActionListener{
     //--------------------------------------------------------------------------------
     //actionPerformed donde esta la logica
     @Override
-    public void actionPerformed(ActionEvent e) {
-        
+    public void actionPerformed(ActionEvent e) { //Recibe el evento, en este caso seria el boton "Iniciar Juego"
+        String jugadaMaquina = jugadaMaquina2.getOpcionAleatoria(); // Encontramos la jugada de la maquina
+        String jugada = vista.getJugada(); //Capturamos la jugada del humano 
+        for(int i = 0; i < jugadas.size(); i++){ //Hacemos un for del tamaño de la lista
+            if(jugadas.get(i).getJugada().equals(jugada)){ //Verificamos que la jugadaHumano sea correcta (piedra,papel,tijera)
+                if(jugada.equals(jugadaMaquina)){ //Comparacion para el empate
+                    vista.mostrarResultadoJuego("Empate" + " (Tu: " + jugada + ", Máquina: " + jugadaMaquina + ")");
+                } else if((jugada.equals("piedra") && jugadaMaquina.equals("tijera")) ||
+                (jugada.equals("papel") && jugadaMaquina.equals("piedra")) ||
+                (jugada.equals("tijera") && jugadaMaquina.equals("papel"))){ //Comparacion para el caso de ganar
+                    vista.mostrarResultadoJuego("Ganaste" + " (Tu: " + jugada + ", Máquina: " + jugadaMaquina + ")");
+                     
+                }else{ //Si no se cumple es por que perdio 
+                    vista.mostrarResultadoJuego("Perdiste" + " (Tu: " + jugada + ", Máquina: " + jugadaMaquina + ")");
+                    
+                }
+            }
+        }
     }
+//--------------------------------------------------------------------------------
+}     
     
-}
+    
+
 
