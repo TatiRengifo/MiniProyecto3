@@ -23,6 +23,9 @@ public class VistaInterfazGUI extends JFrame implements VistaInterfaz {
     JButton botonIniciarJuego;
     JTextField campoJugada;
     JLabel explicacion;
+    JLabel contadorDerrotas;
+    JLabel contadorVictorias;
+    JLabel contadorEmpates;
 //--------------------------------------------------------------------------------
     //Constructor de la clase
     public VistaInterfazGUI(){
@@ -40,6 +43,15 @@ public class VistaInterfazGUI extends JFrame implements VistaInterfaz {
         botonIniciarJuego = new JButton("Iniciar juego");
         contenedor.add(botonIniciarJuego);
 
+        contadorDerrotas = new JLabel("Contador");
+        contenedor.add(contadorDerrotas);
+/*
+        contadorVictorias = new JLabel("Victorias: ");
+        contenedor.add(contadorVictorias);
+
+        contadorEmpates = new JLabel("Empates: ");
+        contenedor.add(contadorEmpates);
+ */
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(500,300);
     }
@@ -64,5 +76,11 @@ public class VistaInterfazGUI extends JFrame implements VistaInterfaz {
         String LowerCaseInput = jugada.toLowerCase(); //Se transforma la letra a minuscula
         return LowerCaseInput; //Se retorna la jugada
     }
+
 //-------------------------------------------------------------------------------- 
+//contadorDerrota; String contadorVictoria; String contadorEmpate;
+    @Override
+    public void mostrarEstadisticas(String contadorDerrota, String contadorVictoria, String contadorEmpate) {
+        contadorDerrotas.setText("Derrotas: " + contadorDerrota +  " Victorias: "  + contadorVictoria + " Empates: " + contadorEmpate);
+    }
 }

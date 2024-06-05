@@ -13,5 +13,8 @@ public interface VistaInterfaz {
     //Funcion para obtener la jugada del humano
     public String getJugada();
 
+    //Funcion para mostrar estadisticas
+    public void mostrarEstadisticas(String contadorcontadorDerrota, String contadorVictoria, String contadorEmpate);
+
 
 }

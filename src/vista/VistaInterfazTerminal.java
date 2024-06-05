@@ -50,5 +50,10 @@ public class VistaInterfazTerminal implements VistaInterfaz {
     public String getJugada() {
         return LowerCaseInput;
     }
+
+    @Override
+    public void mostrarEstadisticas(String contadorDerrota, String contadorVictoria, String contadorEmpate) {
+    System.out.println("Derrotas: " + contadorDerrota +  " Victorias: "  + contadorVictoria + " Empates: " + contadorEmpate);
+    }
     
 }

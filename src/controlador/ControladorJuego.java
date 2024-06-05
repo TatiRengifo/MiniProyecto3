@@ -14,7 +14,9 @@ public class ControladorJuego implements ActionListener{
     ArrayList<Juego> jugadas; //Lista para almacenar las jugadas posibles por el humano
     VistaInterfaz vista; //Variable para utilizar la interfaz
     Juego jugadaMaquina2 = new Juego(); //Creo un objeto de la clase juego para encontar la opcion de la maquina
-
+    int contadorDerrota;
+    int contadorVictoria;
+    int contadorEmpate;
     //--------------------------------------------------------------------------------
     //Metodos de la clase
     //Constructor 
@@ -38,18 +40,22 @@ public class ControladorJuego implements ActionListener{
             if(jugadas.get(i).getJugada().equals(jugada)){ //Verificamos que la jugadaHumano sea correcta (piedra,papel,tijera)
                 if(jugada.equals(jugadaMaquina)){ //Comparacion para el empate
                     vista.mostrarResultadoJuego("Empate" + " (Tu: " + jugada + ", Máquina: " + jugadaMaquina + ")");
+                    contadorEmpate = contadorEmpate + 1;
+                    
                 } else if((jugada.equals("piedra") && jugadaMaquina.equals("tijera")) ||
                 (jugada.equals("papel") && jugadaMaquina.equals("piedra")) ||
                 (jugada.equals("tijera") && jugadaMaquina.equals("papel"))){ //Comparacion para el caso de ganar
                     vista.mostrarResultadoJuego("Ganaste" + " (Tu: " + jugada + ", Máquina: " + jugadaMaquina + ")");
+                    contadorVictoria = contadorVictoria + 1;
                      
                 }else{ //Si no se cumple es por que perdio 
                     vista.mostrarResultadoJuego("Perdiste" + " (Tu: " + jugada + ", Máquina: " + jugadaMaquina + ")");
-                    
+                    contadorDerrota = contadorDerrota + 1;
                 }
             }
         }
-    }
+        vista.mostrarEstadisticas(String.valueOf(contadorDerrota),String.valueOf(contadorVictoria),String.valueOf(contadorEmpate) );
+    }   
 //--------------------------------------------------------------------------------
 }     
     
